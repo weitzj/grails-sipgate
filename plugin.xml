@@ -1,0 +1,18 @@
+<plugin name='sipgate' version='1.0.2' grailsVersion='1.3.7 &gt; *'>
+  <author>Jan Weitz</author>
+  <authorEmail>weitz.jan@googlemail.com</authorEmail>
+  <title>Grails Sipgate SMS Gateway Plugin</title>
+  <description>\
+A plugin, which provides an easy way to send SMS via the XMl-RPC API of the German SMS-Gateway, sipgate.de .
+</description>
+  <documentation>http://grails.org/plugin/sipgate</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>Config</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+    <resource>grails.plugins.sipgate.SipgateService</resource>
+  </resources>
+  <dependencies />
+  <behavior />
+</plugin>
