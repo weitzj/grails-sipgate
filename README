@@ -1,0 +1,48 @@
+----- Overview -----
+
+This plug-in allows you to send SMS via the SMS-Gateway sipgate.de.
+
+----- Usage -----
+
+- First of all, you have to have a sipgate user account with a username/password.
+- Make sure you have a 'conf/Config.groovy' file, which can hold your sipgate-account-data.
+- Install plugin
+- Edit account-data-placeholders in 'conf/Config.groovy'
+
+grails.plugins.sipgate.username = 'YOUR_USERNAME'
+grails.plugins.sipgate.password = 'YOUR_PASSWORD'
+//According to E.164, e.g. '4922112345678'
+grails.plugins.sipgate.phoneNumber = 'YOUR_PHONE'
+
+
+
+-----  Inject the 'sipgateService' and send a SMS -----
+
+def sipgateService
+def phoneNumber = '4917712345678' //phoneNumber according to E.164 specification
+//working alternative: def phoneNumber = '+1-719-555-1234'
+
+def result = sipgateService.sendSMS(phoneNumber, 'This is my Text to send!')
+
+result? println 'Sending Successful': println 'Sending failed'
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+----- Release 1.0.2 -----
+
+- improved Install.groovy with more checks
+- Sipgate phoneNumber must be given in Config.groovy in order to set the 'addressor'
+
+----- Release 1.0.1 -----
+- broken, use 1.0.2 instead
+
+
+----- Release 1.0.0 -----
+- Service can send SMS
+- Default sender in SMS is called 'sipgate'
+
+
+
+----- Contact -----
+Email via weitz.jan@googlemail.com
